@@ -27,23 +27,28 @@ const App = () => {
   const [count, setCount] = useState(0);
   const [text, setText] = useState(info[count].Question);
   const [question, setQuestion] = useState(true);
+  const [answer, setAnswer] = useState('');
+  const [result, setResult] = useState();
 
   const incrementCount = () => {
-    const random = Math.floor(Math.random() * Object.keys(info).length);
-    setCount(random);
-    setText(info[random].Question);
+    if (count + 1 < Object.keys(info).length) {
+      setCount(count + 1);
+      setText(info[count + 1].Question);
+    }
   };
 
   const decrementCount = () => {
-    // if (count - 1 >= 0) {
-    //   setCount(count - 1);
-    //   setText(info[count - 1].Question);
-    // }
+    if (count - 1 >= 0) {
+      setCount(count - 1);
+      setText(info[count - 1].Question);
+    }
+  };
 
+  const shuffle = () => {
     const random = Math.floor(Math.random() * Object.keys(info).length);
     setCount(random);
     setText(info[random].Question);
-  };
+  }
 
   const updateInfo = () => {
     if (question === true) {
@@ -55,19 +60,46 @@ const App = () => {
     }
   };
 
+  const handleText = (event) => {
+    setAnswer(event.target.value);
+  }
+
+  const checkAnswer = () => {
+    if(answer == info[count].Answer)
+    {
+      setResult("correct");
+    }
+    else
+    {
+      setResult("wrong");
+    }
+  }
+
   return (
     <div className="App">
       <h1>Spanish Flashcards</h1>
       <p>
-        I have a Spanish quiz on Tueday! So I will be listing the material here
-        for it like the conjugation of ser and estar verbs. 
+        I have a Spanish exam on the 19th! So I will be listing the material
+        here for it like the conjugations and vocabulary.
       </p>
       <p>Total Number of Cards: {Object.keys(info).length}</p>
       <div className="card" onClick={updateInfo}>
         <p>{text}</p>
       </div>
+
+      <div className="user-input">
+        <form>
+          <label>
+            <input id = {result} type="text" onChange={handleText} />
+          </label>
+        </form>
+
+        <button onClick={checkAnswer}>Check Answer</button>
+      </div>
+
       <div className="buttons">
         <button onClick={decrementCount}>←</button>
+        <button onClick={shuffle}>Pick Random Card</button>
         <button onClick={incrementCount}>→</button>
       </div>
     </div>
