@@ -35,6 +35,9 @@ const App = () => {
       setCount(count + 1);
       setText(info[count + 1].Question);
     }
+
+    setResult("");
+    setAnswer("");
   };
 
   const decrementCount = () => {
@@ -42,12 +45,18 @@ const App = () => {
       setCount(count - 1);
       setText(info[count - 1].Question);
     }
+
+    setResult("");
+    setAnswer("");
   };
 
   const shuffle = () => {
     const random = Math.floor(Math.random() * Object.keys(info).length);
     setCount(random);
     setText(info[random].Question);
+
+    setResult("");
+    setAnswer("");
   }
 
   const updateInfo = () => {
