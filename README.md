@@ -1,8 +1,8 @@
-# Web Development Project 3 - *Name of App Here*
+# Web Development Project 3 - Spanish Flashcards
 
 Submitted by: Anita Prova
 
-This web app: Spanish Flashcards
+This web app: Spanish flashcards describing vocab and conjugation. 
 
 Time spent: 3 hours spent in total
 
@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://github.com/anitaprova/codepath-project02/blob/master/spanish%20study%20guide/src/assets/video.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
